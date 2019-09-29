@@ -12,3 +12,17 @@ body {
 h1 {
   font-size: 100px:
 }
+
+.game {
+  padding-top: 100px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  background: url('dirt4.png') bottom center no-repeat;
+  height: 90px;
+  background-size: contain;
+}
