@@ -36,5 +36,15 @@ function startGame(){
   popUp();
   setTimeout(() => {
     timeUp = true;
-  }, 3000);
+  }, 10000);
 }
+
+function whack(e) {
+  score ++;
+  this.classList.remove('up');
+  scoreBoard.textContent = score;
+}
+
+moles.forEach( mole => {
+  mole.addEventListener('click', whack);
+})
