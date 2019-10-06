@@ -8,12 +8,20 @@ function randomTime(min, max) {
 }
 
 function randomHole(holes) {
-  const idx = Math.round(Math.random() * holes.length);
+  const idx = Math.floor(Math.random() * holes.length);
   const hole = holes[idx];
-
-  if (hole === previousHole) {
+  if (hole === previousHole){
     return randomHole(holes);
   }
   previousHole = hole;
   return hole;
+}
+
+function popUp(){
+  const time = randomTime(200, 1000);
+  const hole = randomHole(holes);
+  hole.classList.add('up');
+  setTimeout(() => {
+    hole.classList.remove('up');
+  }, time)
 }
