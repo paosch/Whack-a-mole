@@ -1,6 +1,7 @@
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const scoreBoard = document.querySelector('.score');
+const audio = new Audio('whack_sound.wav');
 let score = 0;
 let previousHole;
 let timeUp = false;
@@ -41,6 +42,7 @@ function startGame(){
 
 function whack(e) {
   score ++;
+  audio.play();
   this.classList.remove('up');
   scoreBoard.textContent = score;
 }
